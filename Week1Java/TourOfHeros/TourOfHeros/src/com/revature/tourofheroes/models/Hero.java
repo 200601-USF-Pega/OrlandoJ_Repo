@@ -1,3 +1,4 @@
+package com.revature.tourofheroes.models;
 import java.util.Arrays;
 
 //POJO
@@ -19,7 +20,7 @@ public class Hero {
 	public Hero() {
 		
 	}
-	//parameterized with paramters
+	//parameterized with parameters
 	public Hero(String name, String[] specialMove) {
 		//calls the parent constructor
 		super();
@@ -28,7 +29,7 @@ public class Hero {
 	}
 	
 	//method overloading, polymorphism, compile time 
-	public Hero(String name, String[] specialMove, int healthLevel, boolean isAlive) {
+	public Hero(String name, String[] specialMove, int healthLevel, boolean isAlive) throws Exception {
 		//used in constructor chaining
 		this(name, specialMove);
 		this.setHealthLevel(healthLevel);
@@ -52,9 +53,10 @@ public class Hero {
 	public int getHealthLevel() {
 		return healthLevel;
 	}
-	public void setHealthLevel(int healthLevel) {
+	public void setHealthLevel(int healthLevel) throws Exception {
 		if (healthLevel < 0) {
-			// throw error
+			// throw exception
+			throw new Exception("Health level should not be negative!");
 		} else {
 			this.healthLevel = healthLevel;
 		}
