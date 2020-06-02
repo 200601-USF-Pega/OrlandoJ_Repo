@@ -1,35 +1,28 @@
 package com.revature.tourofheroes.service;
 
-import java.util.Scanner;
-
 import com.revature.tourofheroes.exceptions.InvalidHealthException;
 import com.revature.tourofheroes.models.Hero;
-
+//any business logic would go here
 public class HeroService {
-	Scanner input = new Scanner(System.in);
+	ValidationService inputValidation = new ValidationService();
 	public void createNewHero() {
 		boolean success = false;
 		//get user input 
-		//TODO add input validation
 			do {
-				System.out.println("Enter hero name: ");
-				String name = input.nextLine();
+				String name = inputValidation.getValidStringInput("Enter hero name: ");
+				
 				StringBuilder specialmoves = new StringBuilder(); 
 				do {
-					
-					System.out.println("Enter hero moves (input done to stop):");
-					String move = input.nextLine();
+					String move = inputValidation.getValidStringInput("Enter hero moves (input done to stop):");
 					if(move.equalsIgnoreCase("done")) break;
 					specialmoves.append(move);
 					specialmoves.append(",");
 					
 				}while(true);
 				
-				System.out.println("Enter healthlevel: ");
-				int healthLevel = Integer.parseInt(input.nextLine());
+				int healthLevel = inputValidation.getValidInt("Enter health level:");
 				
-				System.out.println("Enter living status (true or false): ");
-				boolean isAlive = Boolean.parseBoolean(input.nextLine());
+				boolean isAlive = inputValidation.getValidBoolean("Enter living status (true or false): ");
 				
 				try {
 					Hero newHero = new Hero(name, specialmoves.toString().split(","), healthLevel, isAlive);
