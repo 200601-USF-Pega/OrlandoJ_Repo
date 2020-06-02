@@ -1,6 +1,8 @@
 package com.revature.tourofheroes.models;
 import java.util.Arrays;
 
+import com.revature.tourofheroes.exceptions.InvalidHealthException;
+
 //POJO
 public class Hero {
 	// Instance scope
@@ -29,7 +31,7 @@ public class Hero {
 	}
 	
 	//method overloading, polymorphism, compile time 
-	public Hero(String name, String[] specialMove, int healthLevel, boolean isAlive) throws Exception {
+	public Hero(String name, String[] specialMove, int healthLevel, boolean isAlive) {
 		//used in constructor chaining
 		this(name, specialMove);
 		this.setHealthLevel(healthLevel);
@@ -41,7 +43,9 @@ public class Hero {
 		return name;
 	}
 	public void setName(String name) {
-		// add some validation/ logic in processing data per instance
+		// add some validation/ logic in processing data per instance, 
+		//check if name is numbers, I recommend looking into RegEx
+		if(name.isEmpty()) throw new IllegalArgumentException();
 		this.name = name;
 	}
 	public String[] getSpecialMove() {
@@ -53,10 +57,10 @@ public class Hero {
 	public int getHealthLevel() {
 		return healthLevel;
 	}
-	public void setHealthLevel(int healthLevel) throws Exception {
+	public void setHealthLevel(int healthLevel){
 		if (healthLevel < 0) {
 			// throw exception
-			throw new Exception("Health level should not be negative!");
+			throw new InvalidHealthException();
 		} else {
 			this.healthLevel = healthLevel;
 		}
