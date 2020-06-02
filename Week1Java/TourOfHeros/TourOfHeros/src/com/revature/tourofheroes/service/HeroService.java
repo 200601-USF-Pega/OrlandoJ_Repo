@@ -1,26 +1,47 @@
 package com.revature.tourofheroes.service;
 
+import java.util.Scanner;
+
 import com.revature.tourofheroes.exceptions.InvalidHealthException;
 import com.revature.tourofheroes.models.Hero;
 
 public class HeroService {
-	public boolean createNewHero() {
+	Scanner input = new Scanner(System.in);
+	public void createNewHero() {
+		boolean success = false;
 		//get user input 
-		String[] specialMoves = {"heat vision", "light", "invulnerability"};
-		Hero newHero;
-		//order matters in catch blocks
-		try {
-			newHero = new Hero("Superman", specialMoves, -2, false);
-			
-		} catch (InvalidHealthException e) {
-			// TODO Auto-generated catch block
-			System.out.println("Creation failed try again");
-			return false;
-		} finally {
-			//usually where clean up goes
-			System.out.println("Tried to make a hero could've failed");
-		}
-		// try with resources - to read on 
-		return true;
+		//TODO add input validation
+			do {
+				System.out.println("Enter hero name: ");
+				String name = input.nextLine();
+				StringBuilder specialmoves = new StringBuilder(); 
+				do {
+					
+					System.out.println("Enter hero moves (input done to stop):");
+					String move = input.nextLine();
+					if(move.equalsIgnoreCase("done")) break;
+					specialmoves.append(move);
+					specialmoves.append(",");
+					
+				}while(true);
+				
+				System.out.println("Enter healthlevel: ");
+				int healthLevel = Integer.parseInt(input.nextLine());
+				
+				System.out.println("Enter living status (true or false): ");
+				boolean isAlive = Boolean.parseBoolean(input.nextLine());
+				
+				try {
+					Hero newHero = new Hero(name, specialmoves.toString().split(","), healthLevel, isAlive);
+					System.out.println("New Hero Created!");
+					System.out.println(newHero);
+					success = true;
+				} catch (InvalidHealthException ex) {
+					System.out.println("Invalid health level! Please repeat your input");
+				}
+				
+			} while (!success);
+		
+		
 	}
 }

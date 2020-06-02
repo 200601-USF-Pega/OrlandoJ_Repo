@@ -13,10 +13,7 @@ public class Hero {
 	private String[] specialMove;
 	private int healthLevel;
 	private boolean isAlive;
-	//static variable, then this variable would be class scope
-	static {
-		System.out.println("Hello World!");
-	}
+	
 	//constructor
 	//no args constructor, no arguments
 	public Hero() {
