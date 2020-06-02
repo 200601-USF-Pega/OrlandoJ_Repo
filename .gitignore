@@ -3,6 +3,7 @@
 # Edit at https://www.gitignore.io/?templates=java,eclipse
 
 .txt
+trainer-code/
 
 ### Eclipse ###
 .metadata
