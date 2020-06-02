@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 //POJO
 public class Hero {
 	// Instance scope
@@ -5,7 +7,7 @@ public class Hero {
 	//private access modifier, encapsulates my data
 	//uses camelCase
 	private String name;
-	private String specialMove;
+	private String[] specialMove;
 	private int healthLevel;
 	private boolean isAlive;
 	//static variable, then this variable would be class scope
@@ -18,7 +20,7 @@ public class Hero {
 		
 	}
 	//parameterized with paramters
-	public Hero(String name, String specialMove) {
+	public Hero(String name, String[] specialMove) {
 		//calls the parent constructor
 		super();
 		this.name = name;
@@ -26,7 +28,7 @@ public class Hero {
 	}
 	
 	//method overloading, polymorphism, compile time 
-	public Hero(String name, String specialMove, int healthLevel, boolean isAlive) {
+	public Hero(String name, String[] specialMove, int healthLevel, boolean isAlive) {
 		//used in constructor chaining
 		this(name, specialMove);
 		this.setHealthLevel(healthLevel);
@@ -41,10 +43,10 @@ public class Hero {
 		// add some validation/ logic in processing data per instance
 		this.name = name;
 	}
-	public String getSpecialMove() {
+	public String[] getSpecialMove() {
 		return specialMove;
 	}
-	public void setSpecialMove(String specialMove) {
+	public void setSpecialMove(String[] specialMove) {
 		this.specialMove = specialMove;
 	}
 	public int getHealthLevel() {
@@ -68,10 +70,8 @@ public class Hero {
 	// this method overrides another method
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return "Hero: "+this.name+" Special Move: "
-				+ this.specialMove + " Health Level: "
-		+this.healthLevel+ " Alive? "+this.isAlive ;
+		return "Hero [name=" + name + ", specialMove=" + Arrays.toString(specialMove) + ", healthLevel=" + healthLevel
+				+ ", isAlive=" + isAlive + "]";
 	}
 	@Override
 	public int hashCode() {
@@ -79,7 +79,6 @@ public class Hero {
 		int result = 1;
 		result = prime * result + (isAlive ? 1231 : 1237);
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result + ((specialMove == null) ? 0 : specialMove.hashCode());
 		return result;
 	}
 	@Override
@@ -98,13 +97,9 @@ public class Hero {
 				return false;
 		} else if (!name.equals(other.name))
 			return false;
-		if (specialMove == null) {
-			if (other.specialMove != null)
-				return false;
-		} else if (!specialMove.equals(other.specialMove))
-			return false;
 		return true;
 	}
+	
 	
 	
 

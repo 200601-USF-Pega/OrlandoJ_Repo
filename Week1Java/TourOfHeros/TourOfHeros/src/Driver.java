@@ -4,11 +4,14 @@ public class Driver {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//new keyword allocates space
-		Hero newHero = new Hero("Flash", "fast Boy", 100, true);
+		String[] specialMoves = {"heat vision", "light", "invulnerability"};
+		String[] specialMoves2 = {"flying"};
+		
+		Hero newHero = new Hero("Superman", specialMoves);
+		Hero newHero2 = new Hero("Falcon", specialMoves2);
+		
 		System.out.println(newHero);
-		Hero newHero2 = new Hero("Flash", "fast Boy", 100, true);
-		System.out.println(newHero.equals(newHero2));
-		System.out.println(newHero.hashCode() == newHero2.hashCode());
+		System.out.println(newHero2);
 	}
 
 }
