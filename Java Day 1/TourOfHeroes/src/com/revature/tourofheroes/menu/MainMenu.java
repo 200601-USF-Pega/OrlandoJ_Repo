@@ -2,7 +2,7 @@ package com.revature.tourofheroes.menu;
 
 import java.util.Scanner;
 
-import com.revature.tourofheroes.models.Hero;
+import com.revature.tourofheroes.service.HeroService;
 
 public class MainMenu {
 	public void mainMenu() {
@@ -27,8 +27,10 @@ public class MainMenu {
 	        
 	        input.close();
 	        
-	        Hero newHero= new Hero(heroName, specialMoves);
-	        System.out.println(newHero);
+	        HeroService heroServicer = new HeroService();
+	        
+	        boolean heroCreated = heroServicer.createHero(heroName, specialMoves, 100, true);
+	        System.out.println("Hero created = " + heroCreated);
 	        
 		} else if (number == 2) {
 			input.close();
