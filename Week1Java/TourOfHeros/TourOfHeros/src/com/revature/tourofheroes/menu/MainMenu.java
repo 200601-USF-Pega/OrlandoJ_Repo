@@ -2,11 +2,12 @@ package com.revature.tourofheroes.menu;
 
 import java.util.Scanner;
 
+import com.revature.tourofheroes.dao.HeroRepoFile;
 import com.revature.tourofheroes.service.HeroService;
 
 public class MainMenu {
 	private Scanner input = new Scanner(System.in);
-	private HeroService service = new HeroService();
+	private HeroService service = new HeroService(new HeroRepoFile());
 	public void start() {
 		String userInput;
 		do {

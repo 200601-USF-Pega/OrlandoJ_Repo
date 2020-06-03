@@ -1,10 +1,15 @@
 package com.revature.tourofheroes.service;
 
+import com.revature.tourofheroes.dao.IHeroRepo;
 import com.revature.tourofheroes.exceptions.InvalidHealthException;
 import com.revature.tourofheroes.models.Hero;
 //any business logic would go here
 public class HeroService {
 	ValidationService inputValidation = new ValidationService();
+	IHeroRepo repo;
+	public HeroService(IHeroRepo repo) {
+		this.repo = repo;
+	}
 	public void createNewHero() {
 		boolean success = false;
 		//get user input 
@@ -27,7 +32,7 @@ public class HeroService {
 				try {
 					Hero newHero = new Hero(name, specialmoves.toString().split(","), healthLevel, isAlive);
 					System.out.println("New Hero Created!");
-					System.out.println(newHero);
+					System.out.println(repo.addHero(newHero));
 					success = true;
 				} catch (InvalidHealthException ex) {
 					System.out.println("Invalid health level! Please repeat your input");

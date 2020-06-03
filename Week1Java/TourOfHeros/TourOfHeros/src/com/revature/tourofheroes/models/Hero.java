@@ -1,10 +1,11 @@
 package com.revature.tourofheroes.models;
+import java.io.Serializable;
 import java.util.Arrays;
 
 import com.revature.tourofheroes.exceptions.InvalidHealthException;
 
 //POJO
-public class Hero {
+public class Hero implements Serializable{
 	// Instance scope
 	//attributes or fields
 	//private access modifier, encapsulates my data
