@@ -11,4 +11,28 @@ public class Bot {
 //		Item selectedItem;
 		this.level = level;
 	}
+
+	public Character getSelectedCharacter() {
+		return selectedCharacter;
+	}
+
+	public void setSelectedCharacter(Character selectedCharacter) {
+		this.selectedCharacter = selectedCharacter;
+	}
+
+	public Item getSelectedItem() {
+		return selectedItem;
+	}
+
+	public void setSelectedItem(Item selectedItem) {
+		this.selectedItem = selectedItem;
+	}
+
+	public int getLevel() {
+		return level;
+	}
+
+	public void setLevel(int level) {
+		this.level = level;
+	}
 }

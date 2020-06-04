@@ -16,4 +16,60 @@ public class Player {
 		this.numberOfWins = 0;
 		this.numberOfMatches = 0;
 	}
+
+	public String getPlayerID() {
+		return playerID;
+	}
+
+	public void setPlayerID(String playerID) {
+		this.playerID = playerID;
+	}
+
+	public int getLevel() {
+		return level;
+	}
+
+	public void setLevel(int level) {
+		this.level = level;
+	}
+
+	public int getXpEarned() {
+		return xpEarned;
+	}
+
+	public void setXpEarned(int xpEarned) {
+		this.xpEarned = xpEarned;
+	}
+
+	public int getNumberOfWins() {
+		return numberOfWins;
+	}
+
+	public void setNumberOfWins(int numberOfWins) {
+		this.numberOfWins = numberOfWins;
+	}
+
+	public int getNumberOfMatches() {
+		return numberOfMatches;
+	}
+
+	public void setNumberOfMatches(int numberOfMatches) {
+		this.numberOfMatches = numberOfMatches;
+	}
+
+	public Character getSelectedCharacter() {
+		return selectedCharacter;
+	}
+
+	public void setSelectedCharacter(Character selectedCharacter) {
+		this.selectedCharacter = selectedCharacter;
+	}
+
+	public Item getSelectedItem() {
+		return selectedItem;
+	}
+
+	public void setSelectedItem(Item selectedItem) {
+		this.selectedItem = selectedItem;
+	}
 }
