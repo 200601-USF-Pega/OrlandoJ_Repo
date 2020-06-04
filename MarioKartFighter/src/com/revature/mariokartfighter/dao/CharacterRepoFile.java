@@ -8,21 +8,19 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.revature.mariokartfighter.models.Player;
+public class CharacterRepoFile implements ICharacterRepo {
+	private String filepath= "src/resources/Character.txt";
 
-public class PlayerRepoFile implements IPlayerRepo {
-	private String filepath= "src/resources/Player.txt";
-	
 	@Override
-	public Player addPlayer(Player player) {
-		List<Player> currentPlayers = this.getAllPlayers();
+	public Character addCharacter(Character character) {
+		List<Character> currentCharacters = this.getAllCharacters();
 		try {
 			ObjectOutputStream objectOutputStream = 
 					new ObjectOutputStream(new FileOutputStream(filepath));
-			currentPlayers.add(player);
-			objectOutputStream.writeObject(currentPlayers);
+			currentCharacters.add(character);
+			objectOutputStream.writeObject(currentCharacters);
 			objectOutputStream.close();
-			return player;
+			return character;
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -30,21 +28,21 @@ public class PlayerRepoFile implements IPlayerRepo {
 	}
 
 	@Override
-	public List<Player> getAllPlayers() {
+	public List<Character> getAllCharacters() {
 		try {
 			ObjectInputStream inputStream = 
 					new ObjectInputStream(new FileInputStream(filepath));
-			List<Player> retrievedPlayers = (ArrayList<Player>) inputStream.readObject();
+			List<Character> retrievedCharacters = (ArrayList<Character>) inputStream.readObject();
 			inputStream.close();
-			return retrievedPlayers;
+			return retrievedCharacters;
 		} catch (IOException e) {
 			
 		} catch (ClassNotFoundException e) {
-			//Just in case Player class is not found
+			//Just in case Character class is not found
 			e.printStackTrace();
 		} 
 		
-		return new ArrayList<Player>();
+		return new ArrayList<Character>();
 	}
 
 }
