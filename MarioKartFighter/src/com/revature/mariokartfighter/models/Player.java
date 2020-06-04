@@ -21,6 +21,13 @@ public class Player {
 		return playerID;
 	}
 
+	@Override
+	public String toString() {
+		return "Player [playerID=" + playerID + ", level=" + level + ", xpEarned=" + xpEarned + ", numberOfWins="
+				+ numberOfWins + ", numberOfMatches=" + numberOfMatches + ", selectedCharacter=" + selectedCharacter
+				+ ", selectedItem=" + selectedItem + "]";
+	}
+
 	public void setPlayerID(String playerID) {
 		this.playerID = playerID;
 	}

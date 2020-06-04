@@ -12,6 +12,12 @@ public class Bot {
 		this.level = level;
 	}
 
+	@Override
+	public String toString() {
+		return "Bot [selectedCharacter=" + selectedCharacter + ", selectedItem=" + selectedItem + ", level=" + level
+				+ "]";
+	}
+
 	public Character getSelectedCharacter() {
 		return selectedCharacter;
 	}

@@ -19,6 +19,13 @@ public class Character {
 		this.unlockAtLevel = unlockAtLevel;
 	}
 
+	@Override
+	public String toString() {
+		return "Character [characterID=" + characterID + ", type=" + type + ", name=" + name + ", maxHealth="
+				+ maxHealth + ", attackStat=" + attackStat + ", defenseStat=" + defenseStat + ", unlockAtLevel="
+				+ unlockAtLevel + "]";
+	}
+
 	public String getCharacterID() {
 		return characterID;
 	}
