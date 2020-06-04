@@ -19,6 +19,13 @@ public class Item {
 		this.bonusToDefense = bonusToDefense;
 	}
 
+	@Override
+	public String toString() {
+		return "Item [itemID=" + itemID + ", name=" + name + ", typeThatCanUse=" + typeThatCanUse + ", unlockAtLevel="
+				+ unlockAtLevel + ", bonusToHealth=" + bonusToHealth + ", bonusToAttack=" + bonusToAttack
+				+ ", bonusToDefense=" + bonusToDefense + "]";
+	}
+
 	public String getItemID() {
 		return itemID;
 	}
