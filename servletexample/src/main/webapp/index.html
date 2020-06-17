@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hello</title>
+</head>
+<body>
+	<h1>Welcome to my demo</h1>
+	<form action="/servletexample/hello" method="get">
+		<input type="submit">
+	</form>
+	<p>Choose a servlet:</p>
+	<form action="/servletexample/redirect" method="get">
+		<label>Servlet 2</label>
+	  	<input type="radio" id="option1" name="servletnum" value="2">
+	  	<label>Servlet 3</label>
+  	  	<input type="radio" id="option2" name="servletnum" value="3">
+  	  	<input type="submit" value="Submit">
+	</form>
+</body>
+</html>

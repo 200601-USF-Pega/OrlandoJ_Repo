@@ -1,0 +1,45 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <welcome-file-list>
+  	<welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  <servlet>
+  	<servlet-name>ServletOne</servlet-name>
+  	<servlet-class>com.revature.servletexample.servlets.ServletOne</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ServletOne</servlet-name>
+  	<url-pattern>/hello</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>ServletTwo</servlet-name>
+  	<servlet-class>com.revature.servletexample.servlets.ServletTwo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ServletTwo</servlet-name>
+  	<url-pattern>/servlettwo</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>ServletThree</servlet-name>
+  	<servlet-class>com.revature.servletexample.servlets.ServletThree</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ServletThree</servlet-name>
+  	<url-pattern>/servletthree</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>ServletRedirect</servlet-name>
+  	<servlet-class>com.revature.servletexample.servlets.ServletRedirect</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ServletRedirect</servlet-name>
+  	<url-pattern>/redirect</url-pattern>
+  </servlet-mapping>
+</web-app>
