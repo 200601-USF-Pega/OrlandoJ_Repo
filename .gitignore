@@ -110,6 +110,7 @@ buildNumber.properties
 
 # End of https://www.toptal.com/developers/gitignore/api/eclipse,java,maven
 
-.pdf
-.txt
+*.pdf
+*.txt
 trainer-code/*
+maven example/*
