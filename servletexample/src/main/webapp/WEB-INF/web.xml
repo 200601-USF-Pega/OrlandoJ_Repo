@@ -15,12 +15,31 @@
   	<servlet-name>ServletOne</servlet-name>
   	<url-pattern>/hello</url-pattern>
   </servlet-mapping>
+  
   <servlet>
   	<servlet-name>ServletTwo</servlet-name>
   	<servlet-class>com.revature.servletexample.servlets.ServletTwo</servlet-class>
   </servlet>
   <servlet-mapping>
   	<servlet-name>ServletTwo</servlet-name>
+  	<url-pattern>/servlettwo</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>ServletThree</servlet-name>
+  	<servlet-class>com.revature.servletexample.servlets.ServletThree</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ServletThree</servlet-name>
+  	<url-pattern>/servletthree</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>ServletRedirect</servlet-name>
+  	<servlet-class>com.revature.servletexample.servlets.ServletRedirect</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ServletRedirect</servlet-name>
   	<url-pattern>/redirect</url-pattern>
   </servlet-mapping>
 </web-app>

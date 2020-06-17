@@ -9,11 +9,11 @@
 	<form action="/servletexample/hello" method="get">
 		<input type="submit">
 	</form>
-	<p>forward to servlet 2</p>
+	<p>Choose a servlet:</p>
 	<form action="/servletexample/redirect" method="get">
-	  <label for="fname">enter 1 or 2:</label>
-	  <input type="radio" id="option1" name="fname">
-  	  <input type="radio" id="option2" name="fname">
+	  <input type="radio" id="option1" name="servletnum" value="2">
+  	  <input type="radio" id="option2" name="servletnum" value="3">
+  	  <input type="submit" value="Submit">
 	</form>
 </body>
 </html>
