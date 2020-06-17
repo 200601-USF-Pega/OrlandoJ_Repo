@@ -1,0 +1,42 @@
+* {
+    background-color: aliceblue;
+}
+
+.jumbotron {
+    background-color: lightsalmon;
+}
+.rowname {
+    font-variant: small-caps;
+    font-weight: 200;
+    vertical-align: center;
+}
+img {
+    object-fit: scale-down;
+}
+table img {
+    object-fit: fill;
+    max-width: 150px;
+}
+#personal {
+    margin-left: 10px;
+}
+#interests-table td {
+    height: 100px;
+    width: 50px;
+    padding-left: 20px;
+}
+h2 ~ h3 {
+    font-style: italic;
+}
+h2 + h3 {
+    color: red;
+}
+#interests2 img {
+    width: 33%;
+}
+#interests2 > div {
+    vertical-align: center;
+}
+.bandname {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- need child, sibling and attribute selectors -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="activity_style.css">
+    <title>About Me</title>
+</head>
+
+<body>
+    <div class="jumbotron" id="top">
+        <h1>About Me</h1>
+        <h3 class="lead">Jackie Orlando</h3>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <a class="nav-link" href="#top">Home</a>
+                <a class="nav-link" href="#personal">Personal</a>
+                <a class="nav-link" href="#interests">Interests</a>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="personal">
+        <h2>Fun</h2>
+        <h3>Facts</h3>
+        <h3>...Maybe</h3>
+        <ul>
+            <li id="age">Age: 22</li>
+            <li id="favcolor">Favorite Color: orange</li>
+        </ul>
+    </div>
+
+    <div id="interests">
+        <h2>Interests</h2>
+        <table id="interests-table">
+            <tbody>
+                <tr class="games">
+                    <td class="rowname">Games</td>
+                    <td class="col-md-4"><img src="https://steamcdn-a.akamaihd.net/steam/apps/1085660/capsule_616x353_koreana.jpg?t=1583858222"></td>
+                    <td class="col-md-4"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/11/Shadow_of_the_Tomb_Raider_cover.png/220px-Shadow_of_the_Tomb_Raider_cover.png"></td>
+                    <td class="col-md-4"><img src="https://store-images.s-microsoft.com/image/apps.17382.13967555278436988.2000000000016084145.4dadc990-51cb-43b4-8d5c-ac57f6b87807"></td>
+                    <td></td>
+                </tr>
+                <tr class="shows">
+                    <td class="rowname">Shows</td>
+                    <td class="col-md-4"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/1c/Legends_of_Tomorrow_season_4.jpg/220px-Legends_of_Tomorrow_season_4.jpg"></td>
+                    <td class="col-md-4"><img src="https://vignette.wikia.nocookie.net/dark-netflix/images/a/a8/Dark_US_Poster.jpg/revision/latest?cb=20171113104852"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="bands">
+                    <td class="rowname">Bands</td>
+                    <td class="col-md-3"><img src="https://f4.bcbits.com/img/0013395257_10.jpg"></td>
+                    <td class="col-md-3"><img src="https://static.thefestfl.com/fest17/2018/05/Graduating-Life-480x310.png"></td>
+                    <td class="col-md-3"><img src="https://pbs.twimg.com/media/EVh-skeX0AEM3zV.jpg"></td>
+                    <td class="col-md-3"><img src="https://images.squarespace-cdn.com/content/v1/5606da1fe4b02eae85978054/1568866721466-IOSHD5JE59UFRL1O2IU4/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/Main.jpg"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <div class="container-fluid" id="interests2">
+        <h2>Interests with BootStrap Containers</h2>
+        <div class="row">
+            <div class="col rowname">Games</div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col">
+                <img src="https://steamcdn-a.akamaihd.net/steam/apps/1085660/capsule_616x353_koreana.jpg?t=1583858222">
+            </div>
+            <div class="col">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/11/Shadow_of_the_Tomb_Raider_cover.png/220px-Shadow_of_the_Tomb_Raider_cover.png">
+            </div>
+            <div class="col">
+                <img src="https://store-images.s-microsoft.com/image/apps.17382.13967555278436988.2000000000016084145.4dadc990-51cb-43b4-8d5c-ac57f6b87807">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col rowname">Shows</div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-3">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/1c/Legends_of_Tomorrow_season_4.jpg/220px-Legends_of_Tomorrow_season_4.jpg">
+            </div>
+            <div class="col-3">
+                <img src="https://vignette.wikia.nocookie.net/dark-netflix/images/a/a8/Dark_US_Poster.jpg/revision/latest?cb=20171113104852">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col rowname">Bands</div>
+        </div>
+        <div class="row align-items-center" id="bandsrow">
+            <div class="col-3">
+                <div class="col">
+                    <img src="https://f4.bcbits.com/img/0013395257_10.jpg">
+                </div>
+                <div class="col bandname">
+                    Trash Boat
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="col">
+                    <img src="https://static.thefestfl.com/fest17/2018/05/Graduating-Life-480x310.png">
+                </div>
+                <div class="col bandname">
+                    Graduating Life
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="col">  
+                    <img src="https://pbs.twimg.com/media/EVh-skeX0AEM3zV.jpg">
+                </div>
+                <div class="col bandname">
+                    Skatune Network
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="col">
+                    <img src="https://images.squarespace-cdn.com/content/v1/5606da1fe4b02eae85978054/1568866721466-IOSHD5JE59UFRL1O2IU4/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/Main.jpg">
+                </div>
+                <div class="col bandname">
+                    Can't Swim
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+</body>
+</html>

@@ -1,0 +1,24 @@
+.jumbotron{
+    color:black;
+}
+body{
+    background-color: grey;
+    color: aliceblue;
+}
+div{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+.csstalk {
+    font-size: 25px;
+}
+table{
+    background-color: aliceblue;
+    color: black;
+}
+#id{
+    color: yellow;
+}
+#hello::first-letter{
+    font-size: 40px;
+    font-weight: 10;
+}
