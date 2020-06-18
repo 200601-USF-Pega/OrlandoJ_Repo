@@ -113,4 +113,5 @@ buildNumber.properties
 *.pdf
 *.txt
 trainer-code/*
-maven example/*
+maven\ example/*
+Servers/*
