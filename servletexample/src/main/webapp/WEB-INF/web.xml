@@ -7,6 +7,7 @@
   <welcome-file-list>
   	<welcome-file>index.html</welcome-file>
   </welcome-file-list>
+  
   <servlet>
   	<servlet-name>ServletOne</servlet-name>
   	<servlet-class>com.revature.servletexample.servlets.ServletOne</servlet-class>
@@ -41,5 +42,14 @@
   <servlet-mapping>
   	<servlet-name>ServletRedirect</servlet-name>
   	<url-pattern>/redirect</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>ServletForward</servlet-name>
+  	<servlet-class>com.revature.servletexample.servlets.ServletForward</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ServletForward</servlet-name>
+  	<url-pattern>/forward</url-pattern>
   </servlet-mapping>
 </web-app>
