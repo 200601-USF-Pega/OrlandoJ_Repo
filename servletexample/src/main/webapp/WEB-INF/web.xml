@@ -52,4 +52,22 @@
   	<servlet-name>ServletForward</servlet-name>
   	<url-pattern>/forward</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>ServletErrorHandler</servlet-name>
+  	<servlet-class>com.revature.servletexample.servlets.ServletErrorHandler</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ServletErrorHandler</servlet-name>
+  	<url-pattern>/errorhandler</url-pattern>
+  </servlet-mapping>
+  
+  <error-page>
+  	<exception-type>javax.servlet.ServletException</exception-type>
+  	<location>/errorhandler</location>
+  </error-page>
+  <error-page>
+  	<error-code>404</error-code>
+  	<location>/errorhandler</location>
+  </error-page>
 </web-app>

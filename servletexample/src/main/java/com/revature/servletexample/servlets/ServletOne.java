@@ -21,6 +21,8 @@ public class ServletOne extends HttpServlet {
         		+ "<p> welcome to the get method </p>"
         		+ "</body>"
         		+ "</html>");
+        
+        throw new ServletException("from servlet one");
     }
 
     @Override
