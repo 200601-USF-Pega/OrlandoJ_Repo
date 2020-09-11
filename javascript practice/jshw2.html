@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript HW 2</title>
+    <script>
+        function askUser() {
+            const insults = ['fuck you', 'disgustang', '*insert insult*'];
+
+            if (confirm('Want to know what I think?')) {
+                document.getElementById('response').innerHTML = insults[Math.floor(Math.random() * insults.length)];
+            } else {
+                document.getElementById('response').innerHTML = 'Honestly, I like you.';
+            }
+        }
+        function createBorder() {
+            const colors = ['red', 'blue', 'green', 'yellow', 'black', 'orange', 'pink', 'purple'];
+            const styles = ['solid', 'dashed', 'dotted', 'double', 'groove', 'ridge'];
+
+            const color_choice = Math.floor(Math.random() * colors.length);
+            const style_choice = Math.floor(Math.random() * styles.length);
+
+            if (document.getElementById('bordered-header')) {
+                let h2 = document.getElementById('bordered-header');
+                h2.style.border = "10px " + colors[color_choice] + " " + styles[style_choice];
+            } else {
+                let header = document.createElement("HEADER");
+                document.body.appendChild(header);
+                let h2 = document.createElement("H2");
+                header.appendChild(h2);   
+                h2.style.border = "10px " + colors[color_choice] + " " + styles[style_choice];
+                h2.id = "bordered-header";
+            }
+        }
+        function chooseImage() {
+            const image = document.getElementById('image3');
+            const character_choice = document.getElementsByName('character');
+
+            for(let i = 0; i < character_choice.length; i++) { 
+                if(character_choice[i].checked) {
+                    if(i == 0) {
+                        document.getElementById("img3").src = "mariodriving.jpg"
+                        break; 
+                    } else {
+                        document.getElementById("img3").src = "359-3596315_mario-kart-ds-promotional-art-mario-kart-ds.png"; 
+                        break;
+                    }
+                }
+            } 
+        }
+        function randomImage() {
+            const pictures = ['91KQmjDxj-L._SL1500_.jpg', '359-3596315_mario-kart-ds-promotional-art-mario-kart-ds.png', 'mariodriving.jpg', 'mariokart.png', 'unnamed.jpg', 'grey-s-anatomy-season-14-television-show-personal-jesus-grey-s-anatomy-season-8-medical-drama-grey-anatomy-thumbnail.jpg'];
+            const alt_text = ['mario kart 8 deluxe switch game', 'luigi flying through the air in a kart', 'mario swerving in a kart', 'mario and peach staring each other down', 'versus template image', 'greys anatomy logo'];
+
+            const img_choice = Math.floor(Math.random() * pictures.length);
+            document.getElementById('random-img').src = pictures[img_choice];
+            document.getElementById('random-img').alt = alt_text[img_choice];
+        }
+        function rotateList() {
+            const isaif_songs = ['everyone blooms', 'camouflage', 'jerk', 'the truth', 'montgomery forever', 'the hard way', 'leaf pile', 'new song d', 'Fairbanks, Alaska', 'love at first sight', 'bus beat', 'make way'];
+
+            const chosen = new Set();
+            while(chosen.size < 3) {
+                chosen.add(Math.floor(Math.random() * isaif_songs.length));
+            }
+            const new_items = Array.from(chosen);
+
+            const list = document.getElementById("isaif");
+            const items = list.childNodes;
+
+            let j=0;
+            for(let i=0; i<items.length; i++) {
+                if (items[i].nodeType != 1) {
+                    continue;
+                }
+                items[i].innerHTML = isaif_songs[new_items[j]];
+                j++;
+            }
+        }
+        function changeLink() {
+            const paragraph = document.getElementById('war-on-mars');
+            const link = paragraph.getElementsByTagName("A")[0];
+            link.href = 'https://destiny.fandom.com/wiki/Zavala';
+        }
+        function dayNight() {
+            const time = prompt("Day or Night?").toLowerCase().trim();
+
+            if(time === "") {
+                alert("Enter a value.");
+            } else if(time !== 'day' && time !== 'night') {
+                alert("Input must be 'day' or 'night'.");
+            } else {
+                const para = document.getElementById('suraya');
+                if (time === 'night') {
+                    para.style.border = "5px dotted #141140";
+                    para.style.backgroundImage = 'stars.jpg';
+                } else {
+                    
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="askUser()">Get Opinion</button>
+    <p id="response"></p>
+    
+    <br><br>
+
+    <button onclick="createBorder()">Create Border</button>
+
+    <br><br>
+
+    <h4>Do you want to see Mario or Toad?</h4>
+    <form>
+        <input type="radio" id="mario" value="mario" name="character">
+        <label for="mario">Mario</label>
+        <input type="radio" id="luigi" value="luigi" name="character">
+        <label for="toad">Luigi</label>
+        <input type="button" onclick="chooseImage()" value="Show Me!">
+    </form>
+    <br>
+    <img src="" id="img3" width=300px>
+
+    <br><br>
+
+    <img id="random-img" width=400px src="359-3596315_mario-kart-ds-promotional-art-mario-kart-ds.png" alt="luigi flying through the air in a kart">
+    <button onclick="randomImage()">Change Image</button>
+
+    <br><br>
+
+    <ul id="isaif">
+        <li>bus beat</li>
+        <li>love at first sight</li>
+        <li>fairbanks, alaska</li>
+    </ul>
+    <button onclick="rotateList()">Generate a new list?</button>
+
+    <br><br>
+
+    <p id="war-on-mars">Whether we wanted it or not, we've stepped into <a href="https://destiny.fandom.com/wiki/The_Taken_War:_Mars"> war with the Cabal on Mars</a>. So let's get to taking out their command, one by one. Valus Ta'aurc. From what I can gather he commands the Siege Dancers from an Imperial Land Tank outside of Rubicon. He's well protected, but with the right team, we can punch through those defenses, take this beast out, and break their grip on Freehold.</p>
+    <button onclick="changeLink()">Change Link?</button>
+
+    <br><br>
+
+    <p id="suraya">You just never quit, do you? Took out ghaul. Woke up the traveler. And now half of what i hear in the streets is how much you and your clan are making a difference. And that's why i started this whole clan thing in the first place. People are still waiting for the Vanguard to lead the way. But it's time for a change! And guardians like you are making it happen. No pressure.</p>
+
+    <button onclick="dayNight()">Day or Night?</button>
+
+    <br><br>
+
+</body>
+</html>
